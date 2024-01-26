@@ -40,7 +40,7 @@ async def message_handler(message: types.Message):
 #Вызывается при нажатии кнопки проверки подписки
 @router.callback_query(F.data=='check') 
 async def check(call: types.CallbackQuery):
-    if not await botads.subs_check(call.from_user.id):
+    if not await botads.subs_check(call.from_user.id, call.from_user.first_name, call.from_user.language_code):
         await call.answer("❌ Подпишитесь на все каналы!", show_alert=True)
     else:
         #Ваш код, который выполняется после прохождения всех спонсорских заданий
