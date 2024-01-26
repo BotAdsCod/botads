@@ -45,7 +45,7 @@ class BotAds:
             return True
 
         args = self.__preset_args(user_id, count_places, first_name, language_code)
-        if res_req := await self.__api_post('http://api.botads.pro:5000/bot/subs_check', args):
+        if res_req := await self.__api_post('https://api.botads.pro/bot/subs_check', args):
             return res_req.get('checked')
         return True
 
@@ -66,6 +66,6 @@ class BotAds:
             return []
 
         args = self.__preset_args(user_id, count_places, first_name, language_code)
-        if res_req := await self.__api_post('http://api.botads.pro:5000/bot/get_subs_list', args):
+        if res_req := await self.__api_post('https://api.botads.pro/bot/get_subs_list', args):
             return res_req.get('unfollow_subs')
         return []
