@@ -1,13 +1,14 @@
+import os
+import codecs
+
 from setuptools import setup, find_packages
 
 VERSION = '1.0.0'
 DESCRIPTION = 'API Integration of the BotAds service'
 
-
-def readme():
-    with open('README.md', 'r') as f:
-        return f.read()
-
+here = os.path.abspath(os.path.dirname(__file__))
+with codecs.open(os.path.join(here, 'README.md'), encoding='utf-8') as file:
+    long_description = file.read()
 
 setup(
     name='botadsapi',
@@ -16,7 +17,7 @@ setup(
     author_email='<api@botads.pro>',
     description=DESCRIPTION,
     long_description_content_type='text/markdown',
-    long_description=readme(),
+    long_description=long_description,
     packages=find_packages(),
     install_requires=['aiohttp'],
     python_requires='>=3.7',
