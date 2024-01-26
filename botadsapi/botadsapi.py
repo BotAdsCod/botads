@@ -1,7 +1,6 @@
 from typing import Any
 
-from aiogram.client.session import aiohttp
-
+import aiohttp
 
 class BotAds:
 
