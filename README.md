@@ -23,7 +23,7 @@ pip install git+https://github.com/BotAdsCod/botads.git
 ```python
 from botadsapi import BotAds
 
-from aiogram import Bot, Dispatcher, Router
+from aiogram import Bot, Dispatcher, Router, F
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
